@@ -31,5 +31,8 @@ def print_average(numbers):
 
 
 def rounded_average(numbers):
-    avg = sum(numbers) / len(numbers)
+    try:
+        avg = sum(numbers) / len(numbers)
+    except ZeroDivisionError:
+        raise ValueError("cannot compute average of an empty collection")
     return floor(avg)
